@@ -16,7 +16,7 @@ gem "lita-ruby"
 
 ## Usage
 
-> Me: Lita: ruby me puts `pwd`
+> Me: Lita: ruby me puts \`pwd\`
 
 > Lita: /app
 
