@@ -1,8 +1,10 @@
 # lita-ruby
 
-Holy fuck this is dangerous. It bears repeating: Holy fuck this is really
-dangerous. It evaluates Ruby directly in the current thread and hijacks
-standard out to redirect it to chat. Could be a lot safer, but YOLO.
+:warning: Holy fuck this is dangerous. :warning:
+
+It bears repeating: Holy fuck this is really dangerous. It evaluates Ruby
+directly in the current thread and hijacks standard out to redirect it to chat.
+Could be a lot safer, but YOLO.
 
 ## Installation
 
