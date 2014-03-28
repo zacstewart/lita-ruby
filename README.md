@@ -1,6 +1,8 @@
 # lita-ruby
 
-TODO: Add a description of the plugin.
+Holy fuck this is dangerous. It bears repeating: Holy fuck this is really
+dangerous. It evaluates Ruby directly in the current thread and hijacks
+standard out to redirect it to chat. Could be a lot safer, but YOLO.
 
 ## Installation
 
@@ -10,13 +12,10 @@ Add lita-ruby to your Lita instance's Gemfile:
 gem "lita-ruby"
 ```
 
-## Configuration
-
-TODO: Describe any configuration attributes the plugin exposes.
-
 ## Usage
 
-TODO: Describe the plugin's features and how to use them.
+> Me: Lita: ruby me puts `pwd`
+> Lita: /app
 
 ## License
 
