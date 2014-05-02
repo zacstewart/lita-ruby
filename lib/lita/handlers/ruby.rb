@@ -32,7 +32,11 @@ module Lita
 
       def evaluate(response)
         hijack_stdio_with(response) do
-          eval(response.matches.first.first, binding, __FILE__, __LINE__)
+          begin
+            eval(response.matches.first.first, binding, __FILE__, __LINE__)
+          rescue => error
+            puts error.inspect
+          end
         end
       end
 
@@ -44,9 +48,6 @@ module Lita
         $stdout = StandardChat.new(response)
         $stderr = StandardChat.new(response)
         yield
-      rescue => error
-        $stderr.puts error.inspect
-      ensure
         $stdout = original_stdout
         $stderr = original_stderr
       end
