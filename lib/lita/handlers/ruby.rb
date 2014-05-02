@@ -38,11 +38,14 @@ module Lita
 
       private
 
-      def hijack_stdout_with(response)
+      def hijack_stdio_with(response)
         original_stdout = $stdout
+        original_stderr = $stderr
         $stdout = StandardChat.new(response)
+        $stderr = StandardChat.new(response)
         yield
         $stdout = original_stdout
+        $stderr = original_stderr
       end
     end
 
