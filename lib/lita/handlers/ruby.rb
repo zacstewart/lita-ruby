@@ -31,7 +31,7 @@ module Lita
         }
 
       def evaluate(response)
-        hijack_stdio_with(response) do
+        hijack_stdout_with(response) do
           begin
             eval(response.matches.first.first, binding, __FILE__, __LINE__)
           rescue => error
