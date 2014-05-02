@@ -44,6 +44,9 @@ module Lita
         $stdout = StandardChat.new(response)
         $stderr = StandardChat.new(response)
         yield
+      rescue => error
+        $stderr.puts error.inspect
+      ensure
         $stdout = original_stdout
         $stderr = original_stderr
       end

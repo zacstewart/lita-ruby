@@ -14,5 +14,12 @@ describe Lita::Handlers::Ruby, lita_handler: true do
       send_command 'ruby 3.times { |x| puts "Hello #{ x }" }'
       expect(replies[-3..-1]).to eq(['Hello 0', 'Hello 1', 'Hello 2'])
     end
+
+    context 'when an error occurs' do
+      it 'prints the error to chat' do
+        send_command 'ruby me 1/0'
+        expect(replies.last).to match(/ZeroDivisionError: divided by 0/)
+      end
+    end
   end
 end
